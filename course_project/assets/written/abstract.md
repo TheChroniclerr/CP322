@@ -1,0 +1,9 @@
+**Predicting Graduation Rates of U.S. Universities Using Machine Learning**
+
+Graduation rate is an important indicator of student success and institutional effectiveness in higher education. Universities differ widely in resources, selectivity, and student characteristics, which may influence their ability to support students through to graduation. Understanding the relationship between these institutional factors and graduation outcomes can provide insight into the drivers of academic success.
+
+The objective of this project is to develop machine learning models that predict the graduation rate of universities based on institutional characteristics. By analyzing factors such as student academic preparedness, institutional resources, and financial costs, the project aims to identify which variables are most strongly associated with higher graduation rates. In addition to prediction, the project will explore the relative importance of these factors to better understand what contributes to student completion.
+
+The methodology will involve applying several regression-based machine learning models to predict graduation rate. Planned models include Linear Regression as a baseline model, K-Nearest Neighbors (KNN) Regression, and Random Forest Regression. The models will be trained and evaluated using standard regression metrics such as Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and R² score. Feature importance analysis will also be conducted to identify the most influential predictors.
+
+The dataset used for this analysis is the USNEWS college dataset from the 1995 U.S. News & World Report Guide to America’s Best Colleges. The dataset contains information on over 1300 U.S. colleges and universities, including variables such as SAT and ACT scores, tuition costs, student–faculty ratios, faculty qualifications, instructional expenditures per student, and graduation rates.
