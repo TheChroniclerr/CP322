@@ -1,3 +1,5 @@
+**Side Note:** Run `quarto render` in the `final_project_report` folder that contains the `_quarto.yml` file.
+
 ## Instructions for Setting Up and Using Quarto to Write Reports in VS Code
 
 #### 1. **Install Quarto**
