@@ -1,0 +1,25 @@
+# Pre-Processing and Exploratory Data Analysis
+
+## Dataset Collection
+
+The dataset for this project was sourced from the US News college data repository (`usnews_data.txt`) and contains institutional characteristics for U.S. universities @cmu_college_1995. The dataset includes information such as tuition costs, faculty qualifications, student demographics, and other academic indicators, with the target variable being the graduation rate of each institution. This dataset provides a comprehensive set of features that can be used to explore relationships between university characteristics and student outcomes.
+
+## Data Pre-processing
+
+Data preprocessing was performed to ensure the dataset was clean and suitable for machine learning. Initially, non-numeric values such as asterisks (`*`) were replaced with missing values (`NaN`) and all columns were converted to numeric types to allow proper computation.
+
+Missing values were handled in two ways. Columns with significant missing values (more than 500 missing entries) were dropped, while remaining missing values were imputed using the median for each column. Identifiers and redundant features such as `fice`, `college_name`, and `state` were also removed to prevent them from biasing the models.
+
+Feature engineering was applied to create new variables that capture relevant institutional characteristics. Specifically, the `acceptance rate` was calculated as the ratio of accepted applications to total applications, and the `yield rate` was calculated as the ratio of enrolled students to accepted applicants. The original columns used to compute these rates were then removed to avoid multicollinearity.
+
+Finally, a correlation analysis was conducted to identify highly correlated features. Features with correlations above 0.7 were removed to reduce multicollinearity and simplify the modeling process, including `pct_faculty_terminal`, `tuition_in_state`, and `pct_top25`. Feature scaling using standardization was applied to normalize the values, which is particularly important for distance-based models such as K-Nearest Neighbors.
+
+## Exploratory Data Analysis and Visualisations 
+
+::: {#fig:pre}
+![Distribution of graduation rates](../figures/graduation_rate_dist.png)
+:::
+
+::: {#fig:pre}
+![Correlation heatmap.](../figures/correlation_heatmap.png)
+:::

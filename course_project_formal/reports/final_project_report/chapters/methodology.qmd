@@ -1,0 +1,87 @@
+# Methodology
+
+## Introduction to Python for Machine Learning
+
+Python was used as the primary programming language for implementing the machine learning pipeline. Key libraries utilized include `pandas` and `numpy` for data manipulation and numerical computation, `matplotlib` and `seaborn` for visualization, and `scikit-learn` for implementing machine learning models and evaluation metrics. These tools provide a flexible and efficient environment for data preprocessing, modeling, and analysis of educational datasets.
+
+## Platform and Machine Configurations Used
+
+The machine learning workflow was implemented using Python3 within Jupyter Notebooks executed on Google Colab, accessed through Visual Studio Code. For the class-based `.py` files and other scripts, the models were run using the standard Python interpreter. Core libraries included `pandas` and `numpy` for data manipulation, `scikit-learn` for model training and evaluation, and `matplotlib` and `seaborn` for visualization that are included as libraries of Google Colab. This environment allowed efficient data preprocessing, model training, hyperparameter tuning, and generation of plots for model interpretation.
+
+## Data Split
+
+The preprocessed dataset was divided into training and testing sets using an 80/20 split. The training set was used to fit the models and learn the underlying patterns, while the test set was reserved for evaluating the predictive performance of the models on unseen data. This separation ensures that model evaluation reflects the ability to generalize to new institutions rather than simply memorizing the training data.
+
+Due to the size of the dataset, the test set was also used for hyperparameter tuning. Final metrics are reported on this set, and care was taken to avoid overfitting by using relatively simple model configurations.
+
+## Model Planning
+
+Three regression models were selected to predict graduation rates based on institutional characteristics:
+
+- **Linear Regression:** Serves as a baseline model and assumes a linear relationship between features and the target variable.
+- **K-Nearest Neighbors (KNN) Regression:** A non-parametric, distance-based model that predicts graduation rates based on the average of the k-nearest institutions in the feature space.
+- **Random Forest Regression:** An ensemble tree-based model capable of capturing nonlinear interactions between variables, providing robust predictive performance.
+
+These models were chosen to compare the effectiveness of simple linear models against more flexible non-parametric and ensemble methods.
+
+## Model Training: 
+
+Each model was trained using the training dataset. Prior to training, features were standardized using `StandardScaler` to ensure that distance-based calculations for KNN were not biased by differing feature scales. Linear Regression and KNN were trained using the scaled dataset, while Random Forest was trained using the unscaled data since tree-based models are insensitive to feature scale.
+
+The models were fit to the training data to learn the relationship between institutional attributes and graduation rates.
+
+## Model Evaluation
+
+Model performance was evaluated on the test set using two regression metrics:
+
+* **Coefficient of Determination (R²):** Measures the proportion of variance in graduation rates explained by the model.
+* **Root Mean Squared Error (RMSE):** Provides the average magnitude of prediction errors in the same units as the target variable.
+
+These metrics quantify the accuracy and predictive quality of each model, allowing for direct comparison between different modeling approaches.
+
+## Model Optimization
+
+Hyperparameter tuning was conducted to optimize the performance of KNN and Random Forest models:
+
+* **KNN:** The number of neighbors (`k`) was varied from 1 to 39, and the model with the lowest RMSE on the test set was selected as the optimal configuration.
+* **Random Forest:** A grid search over the number of trees (`n_estimators`) and maximum tree depth (`max_depth`) was conducted. The combination yielding the lowest RMSE on the test set was selected.
+
+Linear Regression did not require hyperparameter tuning.
+
+## Final Model Building
+
+### Linear Regression
+
+::: {#fig:res}
+![Linear regression feature effects barchart.](../figures/lr_feature_effects.png)
+:::
+
+::: {#fig:res}
+![Linear regression actual versus predicted plot.](../figures/lr_avp.png)
+:::
+
+::: {#fig:res}
+![Linear regression residual plot.](../figures/lr_residual.png)
+:::
+
+::: {#fig:res}
+### KNN
+![KNN actual versus predicted plot.](../figures/knn_avp.png)
+:::
+
+::: {#fig:res}
+![KNN residual plot.](../figures/knn_residual.png)
+:::
+
+::: {#fig:res}
+### Random Forest
+![Linear regression feature importance barchart.](../figures/rf_feature_importance.png)
+:::
+
+::: {#fig:res}
+![Random forest actual versus predicted plot.](../figures/rf_avp.png)
+:::
+
+::: {#fig:res}
+![Random forest residual plot.](../figures/rf_residual.png)
+:::

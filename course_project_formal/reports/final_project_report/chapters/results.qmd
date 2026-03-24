@@ -1,0 +1,42 @@
+# Results
+
+## Results Table
+
+::: {#tbl:res}
+| Model             | R²    | RMSE  |
+| ----------------- | ----- | ----- |
+| Linear Regression | 0.523 | 11.76 |
+| KNN               | 0.555 | 11.35 |
+| Random Forest     | 0.561 | 11.28 |
+
+Table: R² and RMSE table.
+:::
+
+## Interpretation of the Results 
+
+The results indicate that Random Forest Regression achieved the best overall performance, with the highest R² value and the lowest RMSE. KNN Regression also performed well, slightly outperforming Linear Regression. However, the differences between the models are relatively small, suggesting the underlying relationships between features and graduation rate may be largely linear, and more complex models provide only marginal benefit.
+
+The R² values, all around 0.52 to 0.56, indicate that approximately half of the variance in graduation rates can be explained by the features in the dataset. This suggests that other unobserved factors may also play a significant role in determining graduation outcomes. Additionally, the RMSE values, which are around 11, indicate that predictions typically deviate from actual values by approximately 11 percentage points.
+
+Overall, ensemble methods such as Random Forest provide slight improvements due to their ability to model nonlinear relationships, while simpler models still capture a substantial portion of the underlying patterns in the data.
+
+## Visualization
+
+::: {#fig:res}
+![Model performance bargraph.](../figures/perf_comp_bar.png)
+:::
+
+## Sensitivity Analysis
+
+::: {#fig:res}
+![KNN hyperparameter tuning plot.](../figures/knn_hptuning.png)
+:::
+
+::: {#fig:res}
+![Random forest hyperparameter tuning heatmap.](../figures/rf_hptuning.png)
+:::
+
+
+
+
+

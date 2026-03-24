@@ -1,0 +1,7 @@
+# Conclusion
+
+The goal of this project is to use machine learning techniques to better understand the factors that influence university graduation rates and to evaluate whether these factors can be used to make reliable predictions. By applying data preprocessing, exploratory analysis, and regression modeling, the project aims to both uncover meaningful relationships in the data and assess the effectiveness of different predictive approaches.
+
+This project applies multiple machine learning models to predict graduation rates using institutional data. Linear Regression, K-Nearest Neighbors, and Random Forest models are developed and evaluated using R² and RMSE metrics. Among the models, Random Forest achieved the best performance, although the improvement over the other models was relatively small. The results indicate that while the selected features are useful in explaining graduation rates, a significant portion of the variance remains unaccounted for, suggesting the influence of other external factors.
+
+Future work could explore incorporating additional features, such as socioeconomic or demographic data, as well as experimenting with more advanced models and feature engineering techniques to improve predictive performance.

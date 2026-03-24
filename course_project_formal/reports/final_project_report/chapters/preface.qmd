@@ -1,0 +1,5 @@
+# Preface {.unnumbered}
+
+This project explores the application of machine learning techniques to analyze and predict university graduation rates using publicly available educational data. The goal of the study is to apply data preprocessing, exploratory data analysis, and regression modeling techniques in order to understand the relationships between institutional characteristics and student graduation outcomes.
+
+Through this project, several machine learning models were implemented and evaluated, including Linear Regression, K-Nearest Neighbors (KNN) Regression, and Random Forest Regression. The work focuses not only on building predictive models but also on understanding the data through visualization, feature selection, and statistical analysis. The project demonstrates the practical workflow of a machine learning pipeline, from dataset preparation to model evaluation and interpretation.
